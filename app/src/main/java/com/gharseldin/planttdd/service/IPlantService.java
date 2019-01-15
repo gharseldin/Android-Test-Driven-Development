@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface IPlantService {
 
-    List<PlantDTO> fetchPlants (String filter);
+    List<PlantDTO> fetchPlants (String filter) throws Exception;
 }

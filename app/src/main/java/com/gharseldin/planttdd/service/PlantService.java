@@ -18,7 +18,7 @@ public class PlantService implements IPlantService {
     }
 
     @Override
-    public List<PlantDTO> fetchPlants(String filter) {
+    public List<PlantDTO> fetchPlants(String filter) throws Exception {
         return plantDAO.fetchPlants(filter);
     }
 }

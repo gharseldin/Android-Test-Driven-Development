@@ -1,7 +1,9 @@
 package com.gharseldin.planttdd.dao;
 
 import com.gharseldin.planttdd.dto.PlantDTO;
+import org.json.JSONException;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -9,5 +11,5 @@ import java.util.List;
  */
 public interface IPlantDAO {
 
-    public List<PlantDTO> fetchPlants(String filter);
+    public List<PlantDTO> fetchPlants(String filter) throws IOException, JSONException;
 }
