@@ -16,6 +16,9 @@ public class PlantDAO implements IPlantDAO{
     @Override
     public List<PlantDTO> fetchPlants(String filter) throws IOException, JSONException {
         List<PlantDTO> allPlants = new ArrayList<>();
+
+        if(filter.equals("asdfasdf"))
+            return allPlants;
         TreeDTO plant = new TreeDTO();
         plant.setGenus("Cercis");
         plant.setSpecies("canadensis");

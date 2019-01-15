@@ -3,6 +3,7 @@ package com.gharseldin.planttdd
 import com.gharseldin.planttdd.dao.PlantDAO
 import com.gharseldin.planttdd.dto.PlantDTO
 import org.json.JSONException
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.IOException
@@ -67,5 +68,21 @@ public class BDDTestPlantDAO {
         }
 
         assertTrue(nasturtiumFound)
+    }
+
+    @Test
+    fun testPlantDAO_fetchShouldReturnEmptyListWhenSearchForGiberish(){
+        givenPlnatDAOIsInitialized()
+        whenSearchForGibberish()
+        thenVerifyNoResults()
+    }
+
+    private fun whenSearchForGibberish() {
+        plants = plantDAO?.fetchPlants("asdfasdf")
+    }
+
+    private fun thenVerifyNoResults() {
+        val size:Int? = plants?.size
+        assertEquals(0, size)
     }
 }
