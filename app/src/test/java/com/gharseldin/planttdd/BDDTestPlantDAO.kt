@@ -3,6 +3,7 @@ package com.gharseldin.planttdd
 import com.gharseldin.planttdd.dao.PlantDAO
 import com.gharseldin.planttdd.dto.PlantDTO
 import org.json.JSONException
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.IOException
 
@@ -40,5 +41,31 @@ public class BDDTestPlantDAO {
                 redbudFound = true;
             }
         }
+
+        assertTrue(redbudFound)
+    }
+
+    @Test
+    @Throws(IOException::class, JSONException::class)
+    fun testPlantDAO_fetchShouldReturnAtLeastTwoOaksForQuercus(){
+        givenPlnatDAOIsInitialized()
+        whenSearchForQuercus()
+        thenVerifyTwoOaks()
+    }
+
+    private fun whenSearchForQuercus() {
+        plants = plantDAO?.fetchPlants("Nasturtium")
+    }
+
+    private fun thenVerifyTwoOaks() {
+        var nasturtiumFound = false;
+
+        for(plant in plants!!){
+            if(plant.genus.contains("Tropoleum") && plant.species.contains("spp")){
+                nasturtiumFound = true;
+            }
+        }
+
+        assertTrue(nasturtiumFound)
     }
 }
