@@ -14,7 +14,7 @@ class SearchPlantActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
         name = plantName.text?.toString()
 
         searchPlants.setOnClickListener(View.OnClickListener {
