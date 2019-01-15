@@ -2,12 +2,10 @@ package com.gharseldin.planttdd;
 
 import com.gharseldin.planttdd.dao.IPlantDAO;
 import com.gharseldin.planttdd.dao.PlantDAOStub;
-import com.gharseldin.planttdd.dto.PlantDTO;
-import org.junit.*;
-
-import java.util.List;
-
-import static org.junit.Assert.assertTrue;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
 /**
  * Created by Amr Gharseldin on 1/11/19.
@@ -27,32 +25,32 @@ public class TestPlantDAO {
         System.out.println("Before: Running init before each test");
     }
 
-    @Test
-    public void testPlantDao_serachForRedBudShouldReturnAtLeastOneResult() {
+//    @Test
+//    public void testPlantDao_serachForRedBudShouldReturnAtLeastOneResult() {
+//
+//        // assume we don't find a match
+//        boolean redBudFound = false;
+//
+//        final List<PlantDTO> plants = plantDAO.fetchPlants("RedBud");
+//
+//        for (PlantDTO plant : plants) {
+//            if (plant.getCommon().contains("Redbud")) {
+//                redBudFound = true;
+//            }
+//        }
+//
+//        assertTrue(redBudFound);
+//    }
 
-        // assume we don't find a match
-        boolean redBudFound = false;
-
-        final List<PlantDTO> plants = plantDAO.fetchPlants("RedBud");
-
-        for (PlantDTO plant : plants) {
-            if (plant.getCommon().contains("Redbud")) {
-                redBudFound = true;
-            }
-        }
-
-        assertTrue(redBudFound);
-    }
-
-    @Test
-    public void testPlantDAO_searchForEShouldReturnAtLeastTwoResults() {
-
-        // assume we don't find a match
-        final List<PlantDTO> plants = plantDAO.fetchPlants("RedBud");
-        int size = plants.size();
-        boolean atLeastTwo = size>=2;
-        assertTrue(atLeastTwo);
-    }
+//    @Test
+//    public void testPlantDAO_searchForEShouldReturnAtLeastTwoResults() {
+//
+//        // assume we don't find a match
+//        final List<PlantDTO> plants = plantDAO.fetchPlants("RedBud");
+//        int size = plants.size();
+//        boolean atLeastTwo = size>=2;
+//        assertTrue(atLeastTwo);
+//    }
 
     @After
     public void teardown() {

@@ -2,6 +2,7 @@ package com.gharseldin.planttdd
 
 import com.gharseldin.planttdd.dao.PlantDAO
 import com.gharseldin.planttdd.dto.PlantDTO
+import org.json.JSONException
 import org.junit.Test
 import java.io.IOException
 
@@ -15,7 +16,7 @@ public class BDDTestPlantDAO {
     private var plantDAO:PlantDAO? = null
 
     @Test
-    @Throws(IOException::class, IOException::class)
+    @Throws(IOException::class, JSONException::class)
     fun testPlantDAO_fetchShouldReturnResultsForRedbud() {
         givenPlnatDAOIsInitialized()
         whenSearchForRedbud()
